@@ -1,16 +1,16 @@
 <?php
-    include_once("Navbar.html");
+include_once "navbar.html";
 ?>
 <br> <br><br>
 <link href="form-validation.css" rel="stylesheet">
 </head>
 
-<body class="bg-light">
+<div class="bg-light">
     <div class="container">
         <div class="py-5 text-center">
-            <img class="d-block mx-auto mb-4" src="img/Logo.png" alt="" width="200" height="auto">
+            <img class="d-block mx-auto mb-4" src="resources/img/Logo.png" alt="" width="200" height="auto">
             <h2>Crea una cuenta</h2>
-         </div>
+        </div>
 
         <div class="row">
             <div class="col-md-8 order-md-2">
@@ -33,7 +33,7 @@
                         </div>
                     </div>
 
-                     <div class="row">
+                    <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="email">Correo</label>
                             <input type="email" class="form-control" id="email" value="" required>
@@ -52,16 +52,17 @@
                             <label for="nCelular">Número de Celular</label>
                             <input pattern="[0-9]+" class="form-control" id="nCelular" value="" required>
                             <div class="invalid-feedback">
-                               Por favor introduce un número válido.
+                                Por favor introduce un número válido.
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="nTelefono">Número Telefónico <span class="text-muted">(Teléfono de Casa)</span></label>
+                            <label for="nTelefono">Número Telefónico <span class="text-muted">(Teléfono de
+                                    Casa)</span></label>
                             <input pattern="[0-9]+" class="form-control" id="nTelefono" value="" required>
                             <div class="invalid-feedback">
                                 Por favor introduce un número válido.
                             </div>
-                          </div>    
+                        </div>
                     </div>
 
                     <div class="mb-3">
@@ -106,7 +107,8 @@
                     <hr class="mb-4">
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="save-info">
-                        <label class="custom-control-label" for="save-info">Estoy de acuerdo con la política de datos</label>
+                        <label class="custom-control-label" for="save-info">Estoy de acuerdo con la política de
+                            datos</label>
                     </div>
 
 
@@ -115,7 +117,8 @@
                 </form>
             </div>
         </div>
- 
+    </div>
+</div>
 <?php
-    include_once("Footer.html");
+include_once "footer.html";
 ?>
