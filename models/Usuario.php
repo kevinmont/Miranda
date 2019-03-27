@@ -77,19 +77,19 @@ abstract class Usuario
         return $this->nombre . " " . $this->aPaterno . " " . $this->aMaterno;
     }
 
-    protected function buscarPorEmailContraseña()
+    protected function buscarEmailPasword()
     {
         $oAccesoDatos = new AccesoDatos();
         $sQuery = "";
         $aResultSet = null;
         $bUserExist = false;
-        if ($this->email == -1 || $this->contraseña == "") {
+        if ($this->email == "" || $this->contraseña == "") {
             throw new Exception("Usuario->buscarPorEmailContraseña(): faltan datos");
         } else {
             if ($oAccesoDatos->conectar()) {
                 $sQuery = "SELECT id_usuario, nombre, a_paterno, a_materno
 					FROM usuarios
-					WHERE email = " . $this->email . "
+					WHERE email ='" . $this->email . "'
 					AND contrasenia = '" . $this->contraseña . "'";
                 $aResultSet = $oAccesoDatos->ejecutarConsulta($sQuery);
                 $oAccesoDatos->desconectar();

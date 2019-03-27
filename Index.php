@@ -1,5 +1,5 @@
 <?php
-include_once("Navbar.html");
+include_once("navbar.html");
 ?>
 <!-- Inicio de Carrusel-->
     <br><br>
@@ -7,13 +7,13 @@ include_once("Navbar.html");
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="img/carousel_one.jpg" class="d-block w-100" alt="...">
+                <img src="resources/img/carousel_one.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="img/carousel_two.jpg" class="d-block w-100" alt="...">
+                <img src="resources/img/carousel_two.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="img/carousel_three.jpg" class="d-block w-100" alt="...">
+                <img src="resources/img/carousel_three.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -43,16 +43,16 @@ include_once("Navbar.html");
     <div class="container-fluido">
         <div class="card-deck">
             <div class="card">
-                    <a href="#"><img src="img/cobertores.png" class="card-img-top" alt="..."></a>
+                    <a href="#"><img src="resources/img/cobertores.png" class="card-img-top" alt="..."></a>
             </div>
             <div class="card">
-                    <a href="#"><img src="img/edredonesycolchas.png" class="card-img-top" alt="..."></a>    
+                    <a href="#"><img src="resources/img/edredonesycolchas.png" class="card-img-top" alt="..."></a>    
             </div>
             <div class="card">
-                    <a href="#"><img src="img/decoracion.png" class="card-img-top" alt="..."></a>
+                    <a href="#"><img src="resources/img/decoracion.png" class="card-img-top" alt="..."></a>
             </div>
         </div>
     </div>
 <?php
-include_once("Footer.html");
+include_once("footer.html");
 ?>
