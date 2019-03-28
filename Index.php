@@ -1,5 +1,5 @@
 <?php
-include_once("navbar.html");
+include_once("navbar.php");
 ?>
 <!-- Inicio de Carrusel-->
     <br><br>
@@ -54,5 +54,5 @@ include_once("navbar.html");
         </div>
     </div>
 <?php
-include_once("footer.html");
+include_once("footer.php");
 ?>

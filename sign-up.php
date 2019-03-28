@@ -1,5 +1,5 @@
 <?php
-include_once "navbar.html";
+include_once "navbar.php";
 ?>
 <br> <br><br>
 <link href="form-validation.css" rel="stylesheet">
@@ -120,5 +120,5 @@ include_once "navbar.html";
     </div>
 </div>
 <?php
-include_once "footer.html";
+include_once "footer.php";
 ?>

@@ -1,9 +1,10 @@
 <?php
-include_once "navbar.html";
+include_once "navbar.php";
 ?>
 <br> <br><br>
 
 <link rel="stylesheet" type="text/css" href="resources/css/signin.css">
+<script src="resources/js/app.js"></script>
 <div class="container">
     <div class="text-center">
         <form class="form-signin">
@@ -19,11 +20,12 @@ include_once "navbar.html";
                     <input type="checkbox" value="remember-me"> Recuerdame
                 </label>
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesión</button>
+            <button id="inputSend" class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesión</button>
         </form>
     </div>
 </div>
 
 <?php
-include_once "footer.html";
+
+include_once "footer.php";
 ?>

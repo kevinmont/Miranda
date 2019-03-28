@@ -1,5 +1,5 @@
 <?php
-include_once "navbar.html";
+include_once "navbar.php";
 ?>
 <br> <br><br>
 <link rel="stylesheet" type="text/css" href="resources/css/signin.css">
@@ -24,5 +24,5 @@ include_once "navbar.html";
 </div>
 
 <?php
-include_once "footer.html";
+include_once "footer.php";
 ?>
