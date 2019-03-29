@@ -22,7 +22,7 @@ app.Util.Regex = app.Util.Regex || {};
         };
     }
 
-    app.sendAjax = function (method, url, payload) {
+    app.sendAjax = function (method, url, payload, callback) {
         if (!method && !url)
             throw new Error("Paramaters missing");
         const httpRequest = new XMLHttpRequest();
@@ -31,28 +31,35 @@ app.Util.Regex = app.Util.Regex || {};
         httpRequest.onreadystatechange = function (event) {
             if (httpRequest.readyState === 4 &&
                 httpRequest.status === 200) {
-                app.Util.processResponse(JSON.parse(httpRequest.responseText));
+                callback(JSON.parse(httpRequest.responseText));
             }
         }
         httpRequest.send(payload);
     }
 
-    app.Util.processResponse = function (data) {
+    app.Util.processLoginResponse = function (data) {
         if (data && data.success) {
+            
             const user = data.body;
             document.cookie = "user=" + user.nombre;
             document.cookie = "kind=" + user.tipoUsuario;
-            app.processHtmlAfterSuccess();
+            app.processHtmlAfterLoginSuccess();
         } else
             throw new Error(data.error.message);
     }
 
-    app.processHtmlAfterSuccess = function () {
+    app.processHtmlAfterLoginSuccess = function () {
         const navbarDropdown2 = document.getElementById('navbarDropdown2');
         const ariaNavbarDropdown2 = document.querySelector('[aria-labelledby=navbarDropdown2]');
         navbarDropdown2.innerHTML = "Usuario";
         const aFirstSibling = ariaNavbarDropdown2.firstElementChild;
         aFirstSibling.innerHTML = "Cerrar Sesión";
+        if (aFirstSibling instanceof HTMLElement) {
+            aFirstSibling.onclick = function () {
+                document.cookie = 'kind=;Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                document.cookie = 'user=;Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            }
+        }
         aFirstSibling.href = "controllers/logout.php";
         const aSecondSibling = aFirstSibling.nextElementSibling;
         aSecondSibling.innerHTML = "Configuración";
@@ -70,7 +77,7 @@ app.Util.Regex = app.Util.Regex || {};
         }
         const sQuery = "email=" + formData.email + "&password=" + formData.password;
         if (formData.email && formData.password)
-            app.sendAjax('POST', 'controllers/login.php', sQuery);
+            app.sendAjax('POST', 'controllers/login.php', sQuery, app.Util.processLoginResponse);
     }
 
     w.onload = function () {
