@@ -1,5 +1,5 @@
 <?php
-include_once "Navbar.php";
+include_once "navbar.php";
 ?>
 <script src="resources/js/product.js"></script>
 <p>

@@ -1,6 +1,6 @@
 <?php
 
-include_once "../models/Productos.php";
+include_once "../models/Producto.php";
 include_once "../models/Usuario.php";
 session_start();
 

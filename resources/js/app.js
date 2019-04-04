@@ -60,7 +60,7 @@ app.Util.Regex = app.Util.Regex || {};
                 document.cookie = 'user=;Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
             }
         }
-        aFirstSibling.href = "controllers/logout.php";
+        aFirstSibling.href = "controllers/Logout.php";
         const aSecondSibling = aFirstSibling.nextElementSibling;
         aSecondSibling.innerHTML = "Configuración";
         aSecondSibling.href = "configuracion.php";
@@ -77,7 +77,7 @@ app.Util.Regex = app.Util.Regex || {};
         }
         const sQuery = "email=" + formData.email + "&password=" + formData.password;
         if (formData.email && formData.password)
-            app.sendAjax('POST', 'controllers/login.php', sQuery, app.Util.processLoginResponse);
+            app.sendAjax('POST', 'controllers/Login.php', sQuery, app.Util.processLoginResponse);
     }
 
     w.onload = function () {

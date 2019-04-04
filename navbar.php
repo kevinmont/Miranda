@@ -75,7 +75,7 @@ session_start();
                             ?>
                         </a>
                         <a class="dropdown-item" href="<?php 
-                            if(isset($_SESSION['user'])) echo "panel.php"; else "sign-up.php";
+                            if(isset($_SESSION['user'])) echo "panel.php"; else echo "sign-up.php";
                         ?>
                         ">
                             <?php 
