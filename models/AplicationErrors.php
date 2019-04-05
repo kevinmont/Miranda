@@ -17,6 +17,7 @@ class AplicationErrors
     const FALTAN_DATOS = 5;
     const NO_EXISTE_BUSCADO = 6;
     const SIN_PERMISOS = 7;
+    const PRODUCTO_NO_ENCONTRADO = 8;
 
     public function getError()
     {
@@ -44,6 +45,8 @@ class AplicationErrors
             case self::NO_EXISTE_BUSCADO:$sMsjError = "No existe el registro buscado";
                 break;
             case self::SIN_PERMISOS:$sMsjError = "No tiene permisos para ver la pantalla solicitada";
+                break;
+            case self::PRODUCTO_NO_ENCONTRADO:$sMsjError = "No se encontraron productos";
                 break;
             default:$sMsjError = "Error de codificaci&oacute;n";
         }
