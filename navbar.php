@@ -13,6 +13,11 @@ session_start();
     <link rel="icon" type="image/png" href="resources/img/favicon.png">
     <link rel="stylesheet" type="text/css" href="vendors/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="vendors/css/all.css">
+
+    <script src="vendors/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="vendors/js/popper.min.js"></script>
+    <script src="vendors/js/bootstrap.min.js"></script>
+    <script src="resources/js/form-validation.js"></script>
 </head>
 
 <body>

@@ -21,7 +21,24 @@ app.Util.Regex = app.Util.Regex || {};
     }
 
     app.Util.afterProductGet = function (data) {
-        console.log(data);
+        if (data.status === 200) {
+            const productRow = document.getElementById('product-row'); // to get template
+            const parent = productRow.parentElement; // to get its parent
+            data.products.forEach(product => {
+                var template = productRow.innerHTML; // change content to string type
+                var newProduct = template.replace('{{id}}', product.id)
+                    .replace('{{imagen}}', product.imagen)
+                    .replace('{{nombre}}', product.nombre)
+                    .replace('{{color}}', product.color)
+                    .replace('{{descripcion}}', product.descripcion)
+                    .replace('{{estilo}}', product.estilo)
+                    .replace('{{material}}', product.material)
+                    .replace('{{estampado}}', product.estampado)
+                    .replace('{{precio}}', product.precio)
+                parent.appendChild($(newProduct)[0]); // add to the parent as its child
+            });
+        } else
+            throw new Error("No data was returned by the server");
     }
 
     w.onload = function () {
