@@ -41,11 +41,29 @@ app.Util.Regex = app.Util.Regex || {};
             throw new Error("No data was returned by the server");
     }
 
+    app.Util.afterGetLineas = function (response) {
+        console.log(response);
+        
+        if (response.status === 200) {
+            const lineaSelectElement = document.getElementById('linea');
+            lineaSelectElement.classList.add("text-uppercase");
+            response.data.forEach(linea => {
+                var option = document.createElement('option');
+                option.innerHTML = linea.nombre;
+                option.value = linea.id;
+                lineaSelectElement.appendChild(option);
+            })
+        } else
+            throw new Error("No data was returned by the server");
+    }
+
     w.onload = function () {
+        console.log("onload")
         var payload = "";
 
         app.sendAjax('GET', 'controllers/ProductosController.php', payload,
             app.Util.afterProductGet);
+        app.sendAjax('GET', 'controllers/LineasController.php', payload,
+            app.Util.afterGetLineas);
     }
-
 }(window))

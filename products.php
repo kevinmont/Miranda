@@ -1,7 +1,7 @@
 <?php
 include_once "navbar.php";
 ?>
-<script src="resources/js/product.js"></script>
+<script  src="resources/js/product.js"></script>
 <p>
     <p><br><br>
         <script>
@@ -28,11 +28,8 @@ include_once "navbar.php";
             <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">LINEA</label>
             </div>
-            <select class="custom-select" id="Linea">
+            <select class="custom-select" id="linea">
                 <option value="0" selected>Elegir...</option>
-                <option value="1">CLÁSICO</option>
-                <option value="2">MODERNO</option>
-                <option value="3">RÚSTICO</option>
             </select>
         </div>
         &nbsp;

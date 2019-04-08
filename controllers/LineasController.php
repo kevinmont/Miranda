@@ -10,9 +10,10 @@ try {
     $aLineas = $lineas->getAll();
     if (!empty($aLineas)) {
         $response .= '"status": 200,
-        "lineas": [';
+        "data": [';
         foreach ($aLineas as $linea) {
             $response .= '{
+                "id": "'.$linea->getId().'",
                 "nombre": "' . $linea->getNombre() . '",
                 "descripcion": "' . $linea->getDescripcion() . '"
             },';
