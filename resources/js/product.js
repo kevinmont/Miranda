@@ -1,5 +1,4 @@
 var app = app || {};
-
 app.Util = app.Util || {};
 
 app.Util.Regex = app.Util.Regex || {};
@@ -18,6 +17,15 @@ app.Util.Regex = app.Util.Regex || {};
             }
         }
         httpRequest.send(payload);
+    }
+
+    app.deleteActualProducts = function () {
+        const productRow = document.getElementById('product-row'); // to get template
+        const parent = productRow.parentElement; // to get its parent
+        const products = parent.querySelectorAll('div.col-md-4');
+        products.forEach(row => {
+            row.remove();
+        })
     }
 
     app.Util.afterProductGet = function (data) {
@@ -42,8 +50,6 @@ app.Util.Regex = app.Util.Regex || {};
     }
 
     app.Util.afterGetLineas = function (response) {
-        console.log(response);
-        
         if (response.status === 200) {
             const lineaSelectElement = document.getElementById('linea');
             lineaSelectElement.classList.add("text-uppercase");
@@ -58,12 +64,21 @@ app.Util.Regex = app.Util.Regex || {};
     }
 
     w.onload = function () {
-        console.log("onload")
         var payload = "";
 
         app.sendAjax('GET', 'controllers/ProductosController.php', payload,
             app.Util.afterProductGet);
         app.sendAjax('GET', 'controllers/LineasController.php', payload,
             app.Util.afterGetLineas);
+        const lineaSelectElement = document.getElementById('linea');
+
+        lineaSelectElement.onchange = function () {
+            var filterByLine = this.options[this.value].textContent;
+            var query = "filterByL=" + filterByLine;
+            app.deleteActualProducts();
+            app.sendAjax('GET', 'controllers/ProductosController.php?' + query, "",
+                app.Util.afterProductGet);
+        }
     }
+
 }(window))
