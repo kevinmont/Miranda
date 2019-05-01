@@ -11,10 +11,6 @@
 
 
 
-<script src="vendors/js/jquery-3.3.1.slim.min.js"></script>
-<script src="vendors/js/popper.min.js"></script>
-<script src="vendors/js/bootstrap.min.js"></script>
-<script src="resources/js/form-validation.js"></script>
 </body>
 
 </html>
