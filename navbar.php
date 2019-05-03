@@ -13,7 +13,6 @@ session_start();
     <link rel="icon" type="image/png" href="resources/img/favicon.png">
     <link rel="stylesheet" type="text/css" href="vendors/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="vendors/css/all.css">
-
     <script src="vendors/js/jquery-3.3.1.slim.min.js"></script>
     <script src="vendors/js/popper.min.js"></script>
     <script src="vendors/js/bootstrap.min.js"></script>
@@ -44,6 +43,7 @@ session_start();
                     <a class="nav-link" href="products.php">Productos</a>
                 </li>
                 <li class="nav-item">
+
                     <a class="nav-link" href="#">Tiendas</a>
                 </li>
                 <li class="nav-item">
@@ -51,6 +51,7 @@ session_start();
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Carrito</i></a>
+
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button"
