@@ -1,0 +1,41 @@
+<!DOCTYPE <!DOCTYPE html>
+<html lang="es-MX" ng-app="mirandaApp">
+
+<head>
+    <meta charset="utf-8">
+    <title> Miranda | Elegancia Para Tu Hogar. </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie-edge">
+    <link rel="icon" type="image/png" href="resources/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="vendors/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="vendors/css/all.css">
+    <script src="vendors/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="vendors/js/popper.min.js"></script>
+    <script src="vendors/js/bootstrap.min.js"></script>
+    <!-- <script src="resources/js/form-validation.js"></script> -->
+
+    <script src="vendors/js/angular.min.js"></script>
+    <script src="vendors/js/angular-route.min.js"></script>
+
+    <script src="resources/js/app-angular.js"></script>
+    <script src="resources/js/controllers/product.js"></script>
+
+</head>
+
+<body >
+    <!-- Proyecto Basado en el Framework Boostrap - Miranda 2019-->
+
+    <ng-include src="'navbar.html'">
+    </ng-include>
+    <!-- Fin de Barra de Navegación-->
+
+    <ng-view>
+    </ng-view>
+    <!-- Fin de vista de navegacion -->
+
+    <ng-include src="'footer.html'">
+    </ng-include>
+    <!-- Fin de footer -->
+</body>
+
+</html>
