@@ -13,6 +13,9 @@ $filterByL = "";
 $filterByM = "";
 $oProduct = new Producto();
 $oError = new AplicationErrors();
+$actualPage = 1;
+$itemsPerPage = 9;
+$itemOfActualPage = 0;
 
 if (isset($_GET['filterByL']) && !empty($_GET['filterByL'])) {
     $filterByL = $_GET['filterByL'];
@@ -38,8 +41,15 @@ if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
                 "material": "' . $producto->getMaterial() . '",
                 "estampado": "' . $producto->getEstampado() . '",
                 "color": "",
-                "precio": ""
+                "precio": "",
+                "nPag": '.$actualPage.'
             },';
+                
+            $itemOfActualPage++;
+                if ($itemOfActualPage >= $itemsPerPage) {
+                    $itemOfActualPage = 0;
+                    $actualPage++;
+                }
             }
             $response = substr($response, 0, strlen($response) - 1);
             $response .= ']}';
@@ -64,9 +74,16 @@ if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
                     "imagen": "' . $producto->getImagen() . '",
                     "estilo": "' . $producto->getEstilo() . '",
                     "material": "' . $producto->getMaterial() . '",
-                    "color": ""
+                    "color": "",
+                    "nPag": '.$actualPage.'
                 },';
+                $itemOfActualPage++;
+                if ($itemOfActualPage >= $itemsPerPage) {
+                    $itemOfActualPage = 0;
+                    $actualPage++;
+                }
             }
+            
             $response = substr($response, 0, strlen($response) - 1);
             $response .= ']}';
         } else {

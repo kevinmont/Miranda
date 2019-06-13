@@ -48,7 +48,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4" ng-repeat="product in Product">
+        <div class="col-md-4" ng-repeat="product in productArrayPageFiltered">
             <div class="card mb-4 shadow-sm" style="width: 16rem;">
                 <img class="card-img-top" src="{{product.imagen}}" style="height: 225px; width: auto; display: block;"
                     data-holder-rendered="true">
@@ -73,7 +73,13 @@
                 </div>
             </div>
         </div>
-        
+        <table width="80%">
+            <tr>
+                <td ng-repeat="nPag in arrayPaginas">
+                    <a href="" ng-click="cambiaPagina(nPag);">{{nPag}}</a>
+                </td>
+            </tr>
+        </table> 
         
            
     </div>
