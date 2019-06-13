@@ -1,12 +1,12 @@
 <p>
     <p><br><br>
         <script>
-        function borrarfiltros() {
-            var Linea = document.getElementById("Linea");
-            var Material = document.getElementById("Material");
-            Linea.value = "0";
-            Material.value = "0";
-        }
+            function borrarfiltros() {
+                var Linea = document.getElementById("Linea");
+                var Material = document.getElementById("Material");
+                Linea.value = "0";
+                Material.value = "0";
+            }
 
         </script>
         <nav aria-label="breadcrumb">
@@ -48,32 +48,33 @@
 
 <div class="container">
     <div class="row">
-        <template id="product-row">
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm" style="width: 16rem;">
-                    <img class="card-img-top" src="{{imagen}}" style="height: 225px; width: auto; display: block;"
-                        data-holder-rendered="true">
-                    <div class="card-body">
-                        <input type="hidden" name="id" value="{{id}}">
-                        <p class="card-text" name="ads"> {{nombre}} </p>
-                        <p class="text-primary">
-                            <!-- <?php if(isset($_SESSION['user'])) echo  "{{precio}}"; else echo ""; ?>  -->
-                        </p>
-                        <p class="text-primary"> Material: {{material}} </p>
-                        <p class="text-primary"> Estilo: {{estilo}} </p>
-                        <p class="text-primary"> Color: {{color}} </p>
-                        <p class="text-primary"> Descripcion: {{descripcion}} </p>
-                        <p class="text-primary">
-                            <!-- <?php if(isset($_SESSION['user'])) echo  "{{estampado}}"; else echo ""; ?> -->
-                         </p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                            </div>
+        <div class="col-md-4" ng-repeat="product in Product">
+            <div class="card mb-4 shadow-sm" style="width: 16rem;">
+                <img class="card-img-top" src="{{product.imagen}}" style="height: 225px; width: auto; display: block;"
+                    data-holder-rendered="true">
+                <div class="card-body">
+                    <input type="hidden" name="id" value="{{product.id}}">
+                    <p class="card-text" name="ads"> {{product.nombre}} </p>
+                    <p class="text-primary">
+                        <!-- <?php if(isset($_SESSION['user'])) echo  "{{precio}}"; else echo ""; ?>  -->
+                    </p>
+                    <p class="text-primary"> Material: {{product.material}} </p>
+                    <p class="text-primary"> Estilo: {{product.estilo}} </p>
+                    <p class="text-primary"> Color: {{product.color}} </p>
+                    <p class="text-primary"> Descripcion: {{product.descripcion}} </p>
+                    <p class="text-primary">
+                        <!-- <?php if(isset($_SESSION['user'])) echo  "{{estampado}}"; else echo ""; ?> -->
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </template>
+        </div>
+        
+        
+           
     </div>
 </div>

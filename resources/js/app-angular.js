@@ -21,6 +21,6 @@ mirandaApp.config(function ($routeProvider) {
 
 mirandaApp.controller('initController', function ($scope, $htpp) {
     $scope.isLogged = false;
-
+    
     
 });
